@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        TheCalc - Bhaskara
+    </title>
+    <style type="text/css">
+        body {background-color: white;
+        color: black;
+        font-size: 14pt;
+        text-align: justify;
+        margin: auto;
+        font-family: Arial, Helvetica, sans-serif;
+        text-indent: 15px;
+        position: fixed;
+        top: 120px;}
+        
+        h1 {position: fixed;
+        top: 40px;
+        text-indent: 15px;}
+
+        div.toposite h1 {
+            background-color: #06074d;
+            border-bottom: black;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            right: 0;
+            height: 35px;
+            padding: 10px;
+            margin-top: 0px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: right;
+            
+        }
+
+        h2 {font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: justify;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="toposite">
+        <h1>TheCalc</h1>
+    </div>
+
+    <h1>Bhaskara</h1>
+    
+    <p>
+        Encontre as raízes da sua função do segundo grau.
+    </p>
+    <p>
+        Digite os termos <strong>a,b,c</strong> da sua função conforme o padrão: <strong>a</strong>.x² + <strong>b</strong>.x + <strong>c</strong>
+    </p>
+    <p>
+        Termo <strong>a</strong>: <input type="number" name="termoa" id="termoA">
+    </p>
+    <p>
+        Termo <strong>b</strong>: <input type="number" name="termob" id="termoB">
+    </p>
+    <p>
+        Termo <strong>c</strong>: <input type="number" name="termoc" id="termoC">
+    </p>
+
+    <p>
+        <input type="button" value="Obter Resultado" onclick="raizes()">
+    </p>
+
+    <div id="res">
+    </div>
+
+<script>
+    function raizes(){var inputa = document.getElementById('termoA')
+    var inputb = document.getElementById('termoB')
+    var inputc = document.getElementById('termoC')
+    var res = document.getElementById('res')
+    var a = parseFloat(inputa.value)
+    var b = parseFloat(inputb.value)
+    var c = parseFloat(inputc.value)
+    var delta = (b**2)-(4*a*c)
+    var raiz1 = (-1*b)/(2*a)-(delta**(1/2))/(2*a)
+    var raiz2 = (-1*b)/(2*a)+(delta**(1/2))/(2*a)
+
+    var resultado = document.getElementById('res')
+    resultado.innerHTML = `<p>Raiz 1: <strong>${raiz1}</strong></p><p>Raiz 2: <strong>${raiz2}</strong></p>`
+} 
+
+</script>
+
+</body>
+</html>
